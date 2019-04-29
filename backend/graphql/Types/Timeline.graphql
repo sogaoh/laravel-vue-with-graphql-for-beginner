@@ -4,6 +4,6 @@ type Timeline {
     tweet_id: Int!
     favorite_id: Int
     tweet: Tweet
-    favorite: Favorite
-    originalFavorite: Favorite
+    favorite: Favorite # この行を追加
+    originalFavorite: Favorite # この行を追加
 }
