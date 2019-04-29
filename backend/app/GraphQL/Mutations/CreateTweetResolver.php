@@ -64,4 +64,17 @@ class CreateTweetResolver
         ]);
     }
 
+    /**
+     * @param \App\Models\Account $account
+     * @param \App\Models\Tweet $tweet
+     */
+    protected function addTweetToFollowersTimeline(Account $account, Tweet $tweet)
+    {
+        foreach ($account->followers as $follower) {
+            Timeline::create([
+                'account_id' => $follower->follower_account_id,
+                'tweet_id'   => $tweet->id,
+            ]);
+        }
+    }
 }
