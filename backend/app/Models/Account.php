@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use GraphQL\Type\Definition\ResolveInfo;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
@@ -78,7 +80,28 @@ class Account extends Authenticatable implements JWTSubject
     public function follower()
     {
         return $this->hasOne(Follower::class)
-            ->where('follower_account_id', auth()->user()->id);
+                    ->where('follower_account_id', auth()->user()->id);
     }
 
+    /**
+     * @return bool
+     */
+    public function getIsFollowingAccountAttribute()
+    {
+        return !!$this->follower;
+    }
+
+    /**
+     * @param $root
+     * @param array $args
+     * @param $context
+     * @param ResolveInfo $resolveInfo
+     * @return Builder
+     */
+    public function accountList($root, array $args, $context, ResolveInfo $resolveInfo): Builder
+    {
+        $accounts = $this->with('follower')
+                         ->where('id', '<>', auth()->user()->id);
+        return $accounts;
+    }
 }

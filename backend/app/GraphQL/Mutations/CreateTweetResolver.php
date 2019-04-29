@@ -11,6 +11,7 @@ use Nuwave\Lighthouse\Support\Contracts\GraphQLContext;
 
 class CreateTweetResolver
 {
+
     /**
      * Return a value for the field.
      *
@@ -77,4 +78,5 @@ class CreateTweetResolver
             ]);
         }
     }
+
 }
