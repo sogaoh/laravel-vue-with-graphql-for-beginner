@@ -1,6 +1,28 @@
 import gql from 'graphql-tag';
 
-// サインアップ
+// ログイン
+export const LOGIN = gql`
+  mutation($email: String! $password: String!) {
+    Login(
+      email: $email
+      password: $password
+    ) {
+      access_token
+      expires_in
+    }
+  }
+`;
+
+export const CREATE_TWEET = gql`
+  mutation($tweet: String!) {
+    CreateTweet(content: $tweet) {
+      id
+      content
+      tweeted_at
+    }
+  }
+`;
+
 export const CREATE_ACCOUNT = gql`
   mutation(
     $name: String!
@@ -28,33 +50,42 @@ export const CREATE_ACCOUNT = gql`
   }
 `;
 
-// ログイン
-export const LOGIN = gql`
-  mutation(
-    $email: String!
-    $password: String!
-  ) {
-    Login(
-      email: $email
-      password: $password
-    ){
-      access_token
-      expires_in
+export const MARK_FAVORITE = gql`
+  mutation($tweet_id: Int! $timeline_id: Int!) {
+    MarkFavorite(tweet_id: $tweet_id timeline_id: $timeline_id)
+  }
+`;
+
+export const UN_MARK_FAVORITE = gql`
+  mutation($tweet_id: Int! $timeline_id: Int!) {
+    UnMarkFavorite(tweet_id: $tweet_id timeline_id: $timeline_id)
+  }
+`;
+
+export const UPDATE_PROFILE = gql`
+  mutation($name: String! $avatar: String) {
+    UpdateProfile(name: $name avatar: $avatar) {
+      id
+      twitter_id
+      name
+      email
+      avatar
     }
   }
 `;
 
-// ツイート
-export const CREATE_TWEET = gql` 
-  mutation(
-    $tweet: String!
-  ) {
-    CreateTweet(
-      content: $tweet
-    ) { 
+export const FOLLOW_ACCOUNT = gql`
+  mutation($id: Int!) {
+    FollowAccount(id: $id) {
       id
-      content
-      tweeted_at 
+      account_id
+      follow_account_id
     }
-  } 
+  }
+`;
+
+export const UN_FOLLOW_ACCOUNT = gql`
+  mutation($id: Int!) {
+    UnFollowAccount(id: $id)
+  }
 `;
