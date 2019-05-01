@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 
+// サインアップ
 export const CREATE_ACCOUNT = gql`
   mutation(
     $name: String!
@@ -23,6 +24,22 @@ export const CREATE_ACCOUNT = gql`
         token_type
         expires_in
       }
+    }
+  }
+`;
+
+// ログイン
+export const LOGIN = gql`
+  mutation(
+    $email: String!
+    $password: String!
+  ) {
+    Login(
+      email: $email
+      password: $password
+    ){
+      access_token
+      expires_in
     }
   }
 `;
