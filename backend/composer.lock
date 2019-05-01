@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "62cbde2def9063e05390073e75b8d468",
+    "content-hash": "8459a413f59fc38227e458071d63a9fa",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1174,16 +1174,16 @@
         },
         {
             "name": "nuwave/lighthouse",
-            "version": "v3.0-beta.3",
+            "version": "v3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nuwave/lighthouse.git",
-                "reference": "dff751c820478fafd7fac38f2a4806255fd0d635"
+                "reference": "21c46e84568fc65cbbfb172bf754d8e64e832bd9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nuwave/lighthouse/zipball/dff751c820478fafd7fac38f2a4806255fd0d635",
-                "reference": "dff751c820478fafd7fac38f2a4806255fd0d635",
+                "url": "https://api.github.com/repos/nuwave/lighthouse/zipball/21c46e84568fc65cbbfb172bf754d8e64e832bd9",
+                "reference": "21c46e84568fc65cbbfb172bf754d8e64e832bd9",
                 "shasum": ""
             },
             "require": {
@@ -1206,7 +1206,7 @@
                 "pusher/pusher-php-server": "^3.2"
             },
             "suggest": {
-                "mll-lab/laravel-graphql-playground": "GraphQL IDE for better development workflows - integrated with Laravel"
+                "mll-lab/laravel-graphql-playground": "GraphQL IDE for better development workflow - integrated with Laravel"
             },
             "type": "library",
             "extra": {
@@ -1231,17 +1231,19 @@
             "authors": [
                 {
                     "name": "Christopher Moore",
-                    "email": "chris@nuwavecommerce.com"
+                    "email": "chris@nuwavecommerce.com",
+                    "homepage": "https://www.nuwavecommerce.com"
                 }
             ],
             "description": "Lighthouse is a schema first GraphQL package for Laravel applications.",
+            "homepage": "https://lighthouse-php.com",
             "keywords": [
                 "api",
                 "graphql",
                 "laravel",
                 "laravel-graphql"
             ],
-            "time": "2019-03-19T19:24:24+00:00"
+            "time": "2019-04-18T18:23:44+00:00"
         },
         {
             "name": "opis/closure",

@@ -1,5 +1,4 @@
-# frontend
-TwitterLikeのフロントエンドです。
+# twitter-like-client
 
 ## Project setup
 ```
