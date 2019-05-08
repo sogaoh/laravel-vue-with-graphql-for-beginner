@@ -17,7 +17,7 @@
               <v-text-field
                 v-model="account.twitter_id"
                 label="twitter_id"
-                disabled=true
+                disabled
               ></v-text-field>
               <v-flex>
                 <img :src="'http://localhost:8000/storage/images/' + account.avatar" height="150" v-if="account.avatar"/>
